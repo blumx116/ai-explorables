@@ -1,0 +1,6 @@
+VOCAB_SIZE: int = 4
+N_EPOCHS: int = 10001
+TRAIN_SIZE: int = 5000
+VAL_SIZE: int = 25
+SEQ_LEN: int = 10
+WEIGHT_DECAY: float = 5e-3

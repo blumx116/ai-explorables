@@ -1,0 +1,10 @@
+torch
+git+https://github.com/huggingface/transformers@main
+tqdm
+plotly
+pandas
+scikit-learn
+flax
+jax
+jaxlib
+einops

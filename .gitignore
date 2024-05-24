@@ -13,6 +13,11 @@ server-side/fill-in-the-blank/py/zari-bert-cda/pytorch_model.bin
 server-side/fill-in-the-blank/py/bert-large-uncased/pytorch_modecl.bin
 server-side/fill-in-the-blank/zari-convert/raw
 
+**/.venv/
+**/__pycache__/
+
+
+
 server-side/dp-model/cns-cache
 
 *.pytorch_modecl.bin
