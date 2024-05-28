@@ -1,4 +1,4 @@
-let dt_vis = d3.select("#app");
+let dt_vis = d3.select("#dt-visualization");
 
 dt_vis.select("*").remove();
 
@@ -31,17 +31,13 @@ async function dtProjDataFromIndices(indices) {
 
 async function __input_box_callback() {
   const values = $("#input-box").val();
-  console.log("called __input_box_callback with " + values);
   const indices = textToIndices(values);
-  console.log(indices);
 
   if (window.tfjs_model) {
     const data = await dtProjDataFromIndices(indices);
-    console.log(data);
 
     if (window.visualize_dt_timeout) {
       clearTimeout(window.visualize_dt_timeout);
-      console.log("nuking");
       dt_vis.selectAll("*").remove();
     }
     dt_plot(dt_vis, data);
@@ -51,6 +47,15 @@ async function __input_box_callback() {
       "conv-input-heatmap",
       tf.transpose(outputs.mamba_layers[0].raw_hidden_states, [1, 0]),
       "Inputs to Convolution",
+      "SSM Series",
+      "Token",
+      indices,
+    );
+
+    visualize_weights_plotly(
+      "gate-heatmap",
+      outputs.mamba_layers[0].silu_gate.slice([0, 0], [1, -1]),
+      "Value of Gate After Activation",
       "SSM Series",
       "Token",
       indices,
@@ -67,7 +72,6 @@ function input_box_callback() {
 
 function createWeightDropdown(weights) {
   var dropdown = $("#weight-dropdown");
-  console.log("creating dropdown");
   for (key in weights) {
     $("<option />", { value: key, text: tfjs_weights[key].name }).appendTo(
       dropdown,
@@ -84,7 +88,6 @@ async function onModelLoad() {
   if (window.tfjs_model) {
     input_box_callback();
 
-    console.log(window.tfjs_weights.layers);
     visualize_weights_plotly(
       "conv-heatmap",
       window.tfjs_weights.conv.tensor.squeeze(1),

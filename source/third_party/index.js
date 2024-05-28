@@ -26,7 +26,6 @@ marked.setOptions({
 
 var renderer = new marked.Renderer();
 function mathsExpression(expr) {
-  console.log("parsing math expression " + expr);
   try {
     if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
       expr = expr.substr(2, expr.length - 4);

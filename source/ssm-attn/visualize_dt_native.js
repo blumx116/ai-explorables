@@ -45,7 +45,6 @@ function linspace(low, high, count) {
 }
 
 function token_boxes(elem, data, x_axis) {
-  console.log(x_axis);
   const tokenBox = elem
     .selectAll("tokens")
     .data(data)

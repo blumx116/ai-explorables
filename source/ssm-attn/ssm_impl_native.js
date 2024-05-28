@@ -3,6 +3,7 @@ const dt_rank = 1;
 const ssm_state_size = 4; // d
 
 function p(name, tensor) {
+  // simple function implemented for quick debugging
   console.log(name);
   console.log(tensor.shape);
   tensor.print();
@@ -69,8 +70,6 @@ function mamba_layer(weights, x) {
 
   var [raw_hidden_states, gate] = tf.split(projected_states, 2, 0);
   raw_hidden_states = raw_hidden_states.transpose([1, 0]);
-  p("raw_hidden_states", raw_hidden_states);
-  p("gate", gate);
 
   var hidden_states = silu(grouped_conv(weights.conv, raw_hidden_states));
 
@@ -115,6 +114,7 @@ function mamba_layer(weights, x) {
     B: B,
     discrete_B: discrete_B,
     gated_scan_outputs: gated_scan_outputs,
+    silu_gate: silu(gate),
     projected_states: projected_states,
     raw_hidden_states: raw_hidden_states,
     hidden_states: hidden_states,
@@ -214,7 +214,6 @@ fetch("model.json")
   .then((response) => response.json())
   .then((json) => {
     const weights = json2Weights(json);
-    console.log(weights);
     window.tfjs_model = (arr) => {
       return model(weights, tf.tensor(arr));
     };

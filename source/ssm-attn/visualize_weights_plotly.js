@@ -31,7 +31,7 @@ async function visualize_weights_plotly(
     await tensor.max().array(),
     cmap_range,
   );
-  console.log(converted_colorscale);
+
   var data = {
     z: await tensor.array(),
     type: "heatmap",
@@ -74,8 +74,6 @@ async function visualize_weights_plotly(
       add_token_ticks(layout.xaxis, tokens);
     }
   }
-
-  console.log("got here");
 
   Plotly.newPlot(div, [data], layout);
 }
