@@ -25,7 +25,7 @@ function axis_config(embeddings, axis) {
 function make_layout(embeddings) {
   return {
     title: {
-      text: "Embedding of each token over time",
+      text: "Evolution of Token Embeddings During Training",
     },
     scene: {
       xaxis: axis_config(embeddings, 0),

@@ -9,6 +9,12 @@ let svg = d3
   .attr("height", "100%")
   .attr("width", "100%");
 
+let bg0 = svg
+  .append("image")
+  .attr("width", "100%")
+  .attr("xlink:href", "img/paper-clip.png")
+  .attr("opacity", 0);
+
 let bg1 = svg
   .append("image")
   .attr("height", "100%")
@@ -65,6 +71,7 @@ let mul_rect = svg_rectangle({
 });
 
 let obj2section = [
+  [[0], bg0, "bg0"],
   [[1, 2, 3], bg1, "bg1"],
   [[4, 5, 6, 7, 8], bg2, "bg2"],
   [[1, 4], ssm_rect, "ssm_rect"],
@@ -83,6 +90,10 @@ function draw_chart(i) {
   d3.select("#graph-title")
     .transition(500)
     .style("opacity", +(i != 0));
+
+  d3.select("#intro-text")
+    .transition(500)
+    .style("opacity", +(i == 0));
 }
 
 function textToIndices(text) {
