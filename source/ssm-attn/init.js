@@ -2,6 +2,89 @@ let dt_vis = d3.select("#dt-visualization");
 
 dt_vis.select("*").remove();
 
+let svg = d3
+  .select("#graph")
+  .append("svg")
+  .style("background-size", "contain")
+  .attr("height", "100%")
+  .attr("width", "100%");
+
+let bg1 = svg
+  .append("image")
+  .attr("height", "100%")
+  .attr("width", "100%")
+  .attr("xlink:href", "img/layer_only.svg")
+  .attr("opacity", 0);
+
+let bg2 = svg
+  .append("image")
+  .attr("height", "100%")
+  .attr("width", "100%")
+  .attr("xlink:href", "img/full_model.svg")
+  .attr("opacity", 0);
+
+function svg_rectangle({ x, y, height, width }) {
+  return svg
+    .append("rect")
+    .attr("x", x)
+    .attr("y", y)
+    .attr("height", height)
+    .attr("width", width)
+    .attr("fill", "transparent")
+    .attr("stroke", "#69b3a2")
+    .attr("stroke-width", "4px")
+    .attr("opacity", 0);
+}
+
+let ssm_rect = svg_rectangle({
+  x: 80,
+  y: 255,
+  height: 45,
+  width: 76,
+});
+
+let conv_rect = svg_rectangle({
+  x: 80,
+  y: 334,
+  height: 45,
+  width: 76,
+});
+
+let gate_rect = svg_rectangle({
+  x: 165,
+  y: 230,
+  height: 190,
+  width: 105,
+});
+
+let mul_rect = svg_rectangle({
+  x: 103,
+  y: 223,
+  height: 30,
+  width: 30,
+});
+
+let obj2section = [
+  [[1, 2, 3], bg1, "bg1"],
+  [[4, 5, 6, 7, 8], bg2, "bg2"],
+  [[1, 4], ssm_rect, "ssm_rect"],
+  [[5], conv_rect, "conv_rect"],
+  [[8], gate_rect, "gate_rect"],
+  [[8], mul_rect, "mul_rect"],
+];
+
+function draw_chart(i) {
+  obj2section.forEach((e) => {
+    const [sections, rect, name] = e;
+    console.log({ sections, rect, name });
+    rect.transition().duration(500).attr("opacity", +sections.includes(i));
+  });
+
+  d3.select("#graph-title")
+    .transition(500)
+    .style("opacity", +(i != 0));
+}
+
 function textToIndices(text) {
   var result = [];
 
@@ -101,3 +184,9 @@ async function onModelLoad() {
 }
 
 onModelLoad();
+
+d3.graphScroll()
+  .sections(d3.selectAll("#sections > div.scroll-section"))
+  .on("active", function (i) {
+    draw_chart(i);
+  });

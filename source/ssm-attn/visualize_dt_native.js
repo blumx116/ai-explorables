@@ -96,7 +96,7 @@ function dt_plot(elem, data) {
 
   const svg = elem
     .append("svg")
-    .attr("height", HEIGHT + 200)
+    .attr("height", HEIGHT + 100)
     .attr("width", WIDTH);
 
   const x_ax = x_axis(WIDTH, data);

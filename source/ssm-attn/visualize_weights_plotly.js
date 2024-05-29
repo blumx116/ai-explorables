@@ -36,6 +36,7 @@ async function visualize_weights_plotly(
     z: await tensor.array(),
     type: "heatmap",
     colorscale: "RdBu",
+    showscale: false,
     hovertemplate:
       "Value: %{z:.2f}<br>" +
       ytitle +
