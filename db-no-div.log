@@ -1,0 +1,44 @@
+yarn run v1.22.22
+$ mkdir -p public && node source/third_party/index.js --watch & sleep 1 && cd public/ && hot-server --port=2344
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2019-11-04-data-leak.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2020-09-27-diversity-metrics.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-03-03-fill-in-the-blank.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-08-27-private-and-fair.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-10-31-uncertainty-calibration.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-01-28-dataset-worldviews.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-02-07-federated-learning.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-08-02-uncertainty-ood.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-09-01-saliency.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2023-05-32-grokking.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2024-04-26-ssm-attn.md
+{
+  code: 'class Model:\n' +
+    '   def __init__(self):\n' +
+    '       self.prev_token: Optional[str] = None\n' +
+    '       self.memory: Optional[str] = None\n' +
+    '\n' +
+    '   def __call__(self, token: str) -> str:\n' +
+    '       if self.prev_token == "✻":\n' +
+    '           self.memory = token\n' +
+    '       self.prev_token = token\n' +
+    '       if token == "✻" and self.memory is not None:\n' +
+    '           return self.memory\n' +
+    '       else:\n' +
+    '           return token',
+  lang: 'python',
+  escaped: undefined
+}
+Trace
+    at renderer.code (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:46:11)
+    at Parser.tok (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1058:28)
+    at Parser.parse (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1003:17)
+    at Parser.parse (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:985:17)
+    at marked (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1322:19)
+    at parsePost (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:97:9)
+    at Array.map (<anonymous>)
+    at Object.<anonymous> (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:82:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1564:10)
+Version 9 of Highlight.js has reached EOL and is no longer supported.
+Please upgrade or ask whatever dependency you are using to upgrade.
+https://github.com/highlightjs/highlight.js/issues/2877

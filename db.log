@@ -1,0 +1,112 @@
+yarn run v1.22.22
+$ mkdir -p public && node source/third_party/index.js --watch & sleep 1 && cd public/ && hot-server --port=2344
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2019-11-04-data-leak.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2020-09-27-diversity-metrics.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-03-03-fill-in-the-blank.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-08-27-private-and-fair.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-10-31-uncertainty-calibration.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-01-28-dataset-worldviews.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-02-07-federated-learning.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-08-02-uncertainty-ood.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-09-01-saliency.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2023-05-32-grokking.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2024-04-26-ssm-attn.md
+{
+  text: 'python\n' +
+    'class Model:\n' +
+    '   def __init__(self):\n' +
+    '       self.prev_token: Optional[str] = None\n' +
+    '       self.memory: Optional[str] = None\n' +
+    '\n' +
+    '   def __call__(self, token: str) -&gt; str:\n' +
+    '       if self.prev_token == &quot;✻&quot;:\n' +
+    '           self.memory = token\n' +
+    '       self.prev_token = token\n' +
+    '       if token == &quot;✻&quot; and self.memory is not None:\n' +
+    '           return self.memory\n' +
+    '       else:\n' +
+    '           return token',
+  math: undefined
+}
+yarn run v1.22.22
+$ mkdir -p public && node source/third_party/index.js --watch & sleep 1 && cd public/ && hot-server --port=2344
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2019-11-04-data-leak.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2020-09-27-diversity-metrics.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-03-03-fill-in-the-blank.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-08-27-private-and-fair.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-10-31-uncertainty-calibration.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-01-28-dataset-worldviews.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-02-07-federated-learning.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-08-02-uncertainty-ood.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-09-01-saliency.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2023-05-32-grokking.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2024-04-26-ssm-attn.md
+{
+  text: 'python\n' +
+    'class Model:\n' +
+    '   def __init__(self):\n' +
+    '       self.prev_token: Optional[str] = None\n' +
+    '       self.memory: Optional[str] = None\n' +
+    '\n' +
+    '   def __call__(self, token: str) -&gt; str:\n' +
+    '       if self.prev_token == &quot;✻&quot;:\n' +
+    '           self.memory = token\n' +
+    '       self.prev_token = token\n' +
+    '       if token == &quot;✻&quot; and self.memory is not None:\n' +
+    '           return self.memory\n' +
+    '       else:\n' +
+    '           return token',
+  math: undefined
+}
+Trace
+    at renderer.codespan (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:61:13)
+    at InlineLexer.output (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:695:28)
+    at Parser.tok (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1137:23)
+    at Parser.parse (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1003:17)
+    at Parser.parse (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:985:17)
+    at marked (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1322:19)
+    at parsePost (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:97:9)
+    at Array.map (<anonymous>)
+    at Object.<anonymous> (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:82:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
+yarn run v1.22.22
+$ mkdir -p public && node source/third_party/index.js --watch & sleep 1 && cd public/ && hot-server --port=2344
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2019-11-04-data-leak.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2020-09-27-diversity-metrics.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-03-03-fill-in-the-blank.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-08-27-private-and-fair.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2021-10-31-uncertainty-calibration.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-01-28-dataset-worldviews.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-02-07-federated-learning.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-08-02-uncertainty-ood.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2022-09-01-saliency.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2023-05-32-grokking.md
+/Users/carterblum/projects/pair/ai-explorables/source/third_party/../../source/_posts/2024-04-26-ssm-attn.md
+{
+  text: 'python\n' +
+    'class Model:\n' +
+    '   def __init__(self):\n' +
+    '       self.prev_token: Optional[str] = None\n' +
+    '       self.memory: Optional[str] = None\n' +
+    '\n' +
+    '   def __call__(self, token: str) -&gt; str:\n' +
+    '       if self.prev_token == &quot;✻&quot;:\n' +
+    '           self.memory = token\n' +
+    '       self.prev_token = token\n' +
+    '       if token == &quot;✻&quot; and self.memory is not None:\n' +
+    '           return self.memory\n' +
+    '       else:\n' +
+    '           return token',
+  math: undefined
+}
+Trace
+    at renderer.codespan (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:61:13)
+    at InlineLexer.output (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:695:28)
+    at Parser.tok (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1137:23)
+    at Parser.parse (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1003:17)
+    at Parser.parse (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:985:17)
+    at marked (/Users/carterblum/projects/pair/ai-explorables/node_modules/marked/lib/marked.js:1322:19)
+    at parsePost (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:97:9)
+    at Array.map (<anonymous>)
+    at Object.<anonymous> (/Users/carterblum/projects/pair/ai-explorables/source/third_party/index.js:82:4)
+    at Module._compile (node:internal/modules/cjs/loader:1480:14)
